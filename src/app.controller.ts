@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Param, ParseIntPipe, Post} from '@nestjs/common';
+import { Body, Controller, Get, Post, Header } from '@nestjs/common';
 import { AppService } from './app.service';
 
 interface Rating {
@@ -22,13 +22,13 @@ export class AppController {
 
   @Post()
   saveNumber(@Body() requestBody: { company: string }): string {
-
     const { company } = requestBody;
     this.numberService.saveNumber(company);
     return 'Рейтинг сохранен';
   }
 
   @Get()
+  @Header('Access-Control-Allow-Origin', '*')
   getStoredNumber(): Rating {
     return this.numberService.getStoredNumber();
   }

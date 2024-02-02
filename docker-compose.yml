@@ -1,25 +1,16 @@
-version: '3'
+version: '3.7'
+
 services:
-  webapp:
+  internationaltrashaward:
+    container_name: internationaltrashaward
     restart: always
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "3000:3080"
-  nginx:
-    restart: always
-    build:
-      context: ./nginx-conf
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./certbot/www:/var/www/certbot/:ro
-      - ./nginx/conf/:/etc/nginx/conf.d/:ro
-      - ./certbot/conf/:/etc/nginx/ssl/:ro
-  certbot:
-    image: certbot/certbot:latest
-    volumes:
-      - ./certbot/www/:/var/www/certbot/:rw
-      - ./certbot/conf/:/etc/letsencrypt/:rw
+    networks:
+      nginx_net:
+
+networks:
+  nginx_net:
+    external: true
+#     Сообщает о том, что сеть nginx_net находится не в этом контейнере.

@@ -34,7 +34,7 @@ services:
     container_name: stat
     image: alextael/nestjs-back4app3
     expose:
-      - "8080"
+      - "3000"
     environment:
       VIRTUAL_HOST: stat.internationaltrashaward.org
       LETSENCRYPT_HOST: stat.internationaltrashaward.org

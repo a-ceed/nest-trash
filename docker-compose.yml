@@ -1,16 +1,18 @@
 version: '3.7'
 
 services:
-  internationaltrashaward:
-    container_name: internationaltrashaward
-    restart: always
+  proj1:
+    container_name: proj1
+#    restart: always
     build:
       context: .
       dockerfile: Dockerfile
+    ports:
+      - 5000:3000
     networks:
-      nginx_net:
+      - network1
 
 networks:
-  nginx_net:
-    external: true
+  network1:
+    name: network1
 #     Сообщает о том, что сеть nginx_net находится не в этом контейнере.

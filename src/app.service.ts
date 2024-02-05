@@ -35,7 +35,7 @@ export class AppService {
 
   private loadRatingFromFile(): Rating {
     try {
-      const data = fs.readFileSync('data.json', 'utf-8');
+      const data = fs.readFileSync('statistic/data.json', 'utf-8');
       return JSON.parse(data);
     } catch (error) {
       console.error('Ошибка при чтении файла:', error);
@@ -45,6 +45,6 @@ export class AppService {
 
   private saveRatingToFile(): void {
     const data = JSON.stringify(this.rating);
-    fs.writeFileSync('data.json', data);
+    fs.writeFileSync('statistic/data.json', data);
   }
 }

@@ -33,7 +33,7 @@ services:
 
   stat:
     container_name: stat
-    image: alextael/nestjs-back4app3
+    image: alextael/trashv1
     expose:
       - "3000"
     environment:

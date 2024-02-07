@@ -33,7 +33,7 @@ services:
 
   stat:
     container_name: stat
-    image: alextael/trashv4
+    image: alextael/trashv9
     expose:
       - "3000"
     environment:

@@ -21,6 +21,10 @@ export class AppController {
   constructor(private readonly numberService: AppService) {}
 
   @Post()
+  @Header('Access-Control-Allow-Origin', '*')
+  @Header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+  @Header('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+
   saveNumber(@Body() requestBody: { company: string }): string {
     const { company } = requestBody;
     this.numberService.saveNumber(company);

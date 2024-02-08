@@ -31,8 +31,8 @@ services:
     environment:
       DEFAULT_EMAIL: forjetx@gmail.com
 
-  stat:
-    container_name: stat
+  stat.internationaltrashaward.org:
+    container_name: stat.internationaltrashaward.org
     image: alextael/trashv9
     expose:
       - "3000"

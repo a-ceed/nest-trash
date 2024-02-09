@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Header } from '@nestjs/common';
+import {Body, Controller, Get, Post, Header, Options} from '@nestjs/common';
 import { AppService } from './app.service';
 
 interface Rating {
@@ -19,6 +19,11 @@ interface Rating {
 @Controller('company')
 export class AppController {
   constructor(private readonly numberService: AppService) {}
+
+  @Options()
+  options() {
+    return 'OK';
+  }
 
   @Post()
   @Header('Access-Control-Allow-Origin', '*')

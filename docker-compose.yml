@@ -32,13 +32,13 @@ services:
       DEFAULT_EMAIL: forjetx@gmail.com
 
   stat.internationaltrashaward.org:
-    container_name: stat.internationaltrashaward.org
+    container_name: www.stat.internationaltrashaward.org
     image: alextael/trashv9
     expose:
       - "3000"
     environment:
-      VIRTUAL_HOST: stat.internationaltrashaward.org
-      LETSENCRYPT_HOST: stat.internationaltrashaward.org
+      VIRTUAL_HOST: www.stat.internationaltrashaward.org
+      LETSENCRYPT_HOST: www.stat.internationaltrashaward.org
     volumes:
       - data:/var/docker/data/stat
 

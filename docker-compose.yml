@@ -42,5 +42,11 @@ services:
     volumes:
       - data:/var/docker/data/stat
 
+  web:
+    build: .
+    ports:
+      - "80:80"
+
+
 volumes:
   data:

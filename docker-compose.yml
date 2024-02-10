@@ -40,6 +40,7 @@ services:
       VIRTUAL_HOST: stat.internationaltrashaward.org
       LETSENCRYPT_HOST: stat.internationaltrashaward.org
     volumes:
+      - ./frontend:/app/frontend
       - data:/var/docker/data/stat
 
 volumes:

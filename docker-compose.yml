@@ -13,7 +13,7 @@ services:
       - /var/docker/nginx/html:/usr/share/nginx/html
       - /var/docker/nginx/certs:/etc/nginx/certs
       - /var/docker/nginx/vhost:/etc/nginx/vhost.d
-      - ./frontend:/app/frontend
+      - /frontend:/usr/share/nginx/html
       - data:/var/docker/data
     logging:
       options:
@@ -41,7 +41,7 @@ services:
       VIRTUAL_HOST: stat.internationaltrashaward.org
       LETSENCRYPT_HOST: stat.internationaltrashaward.org
     volumes:
-      - ./frontend:/app/frontend
+      - ./frontend:/usr/share/nginx/html
       - data:/var/docker/data/stat
 
 volumes:

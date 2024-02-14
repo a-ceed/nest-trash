@@ -32,13 +32,11 @@ function stat(){
         company: CONSTNAME,
     };
 
-    fetch("https://stat.internationaltrashaward.org/company", {
+    fetch("/api/company", {
         method: 'POST',
         body: JSON.stringify(data)
     })
         .then(response => {
-            console.log('Response:', response);
-            debugger; // добавляем точку останова
         })
         .catch(error => {
             console.error('Error:', error);

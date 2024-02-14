@@ -10,9 +10,9 @@ services:
       - 443:443
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
+      - /var/docker/nginx/html:/usr/share/nginx/html
       - /var/docker/nginx/certs:/etc/nginx/certs
       - /var/docker/nginx/vhost:/etc/nginx/vhost.d
-      - /frontend:/usr/share/nginx/html
       - data:/var/docker/data
     logging:
       options:
@@ -33,7 +33,7 @@ services:
 
   stat:
     container_name: stat.internationaltrashaward.org
-    image: alextael/trashv11
+    image: alextael/trashv14
     expose:
       - "3000"
     environment:

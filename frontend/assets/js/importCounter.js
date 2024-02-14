@@ -1,6 +1,6 @@
 'use strict';
 
-fetch('https://stat.internationaltrashaward.org/company')
+fetch('/api/company')
     .then((response) => response.json())
     .then((data) => {
 

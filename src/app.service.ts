@@ -1,19 +1,19 @@
 import { Injectable } from '@nestjs/common';
 import * as fs from "fs";
 
-interface Rating {
-  Cola: number;
-  BP: number;
-  Starbucks: number;
-  PhilipM: number;
-  McDonalds: number;
-  Nestle: number;
-  Pepsi: number;
-  Unilever: number;
-  ProcterG: number;
-  Monsanto: number;
-  Mondelez: number;
-  Mars: number;
+export interface Rating {
+  cola: number;
+  bp: number;
+  starbucks: number;
+  philipmorris: number;
+  mcdonalds: number;
+  nestle: number;
+  pepsi: number;
+  unilever: number;
+  proctergamble: number;
+  monsanto: number;
+  mondelez: number;
+  mars: number;
 }
 
 @Injectable()
@@ -25,7 +25,9 @@ export class AppService {
   }
 
   saveNumber(company: string): void {
+    console.log("saveNumber:", company)
     this.rating[company] += 1;
+    console.log("this.rating", this.rating)
     this.saveRatingToFile();
   }
 

@@ -4,7 +4,7 @@ const CATALOG = [
         name: 'Coca-cola',
         logo: 'logocompany/coca-cola-logo-international-trash-award-.jpg',
         counter: 'cocaColaCounter',
-        link: 'international-trash-award-company.html?companyname=coca-cola',
+        link: 'international-trash-award-company.html?companyname=cola',
 
     },
     {
@@ -27,7 +27,7 @@ const CATALOG = [
         name: 'Philip Morris',
         logo: 'logocompany/philip-morris-logo-international-trash-award.png',
         counter: 'philipmorrisCounter',
-        link: 'international-trash-award-company.html?companyname=philip-morris',
+        link: 'international-trash-award-company.html?companyname=philipmorris',
     },
     {
         id: '05',
@@ -62,7 +62,7 @@ const CATALOG = [
         name: 'Procter & Gamble',
         logo: 'logocompany/pg-logo-international-trash-award.jpg',
         counter: 'pgCounter',
-        link: 'international-trash-award-company.html?companyname=pg',
+        link: 'international-trash-award-company.html?companyname=proctergamble',
     },
     {
         id: '10',

@@ -29,11 +29,14 @@
 
 function stat(){
     const data = {
-        company: CONSTNAME,
+        "company": CONSTNAME,
     };
 
     fetch("/api/company", {
         method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify(data)
     })
         .then(response => {

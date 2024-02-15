@@ -33,7 +33,7 @@ services:
 
   stat:
     container_name: stat.internationaltrashaward.org
-    image: alextael/trashv14
+    image: alextael/trashv15
     expose:
       - "3000"
     environment:

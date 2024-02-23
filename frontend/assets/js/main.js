@@ -29,10 +29,10 @@
 
 function stat(){
     const data = {
-        "company": CONSTNAME,
+        "title": CONSTNAME,
     };
 
-    fetch("/api/company", {
+    fetch("api/votes", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

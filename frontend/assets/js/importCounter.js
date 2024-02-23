@@ -1,22 +1,47 @@
 'use strict';
 
-fetch('/api/company')
+// Функция для получения значения "rating" по "title"
+function getRatingByTitle(data, title) {
+        console.log("title", title)
+        for (var i = 0; i < data.length; i++) {
+                if (data[i].title === title) {
+                        return data[i].rating;
+                }
+        }
+        return null; // Если объект с указанным "title" не найден
+}
+
+fetch('/api/votes')
     .then((response) => response.json())
     .then((data) => {
+            console.log("data", data)
+            // Маппинг "title" элементов на их id
+            var elementsMap = {
+                    'cola': 'cocaColaCounter',
+                    'bp': 'bpCounter',
+                    'starbucks': 'starbucksCounter',
+                    'philipmorris': 'philipmorrisCounter',
+                    'mcdonalds': 'mcdonaldsCounter',
+                    'nestle': 'nestleCounter',
+                    'pepsi': 'pepsiCounter',
+                    'unilever': 'unileverCounter',
+                    'proctergamble': 'pgCounter',
+                    'monsanto': 'monsantoCounter',
+                    'mondelez': 'mondelezCounter',
+                    'mars': 'marsCounter'
+            };
 
-        document.getElementById('cocaColaCounter').innerHTML = data['cola'];
-        document.getElementById('bpCounter').innerHTML = data['bp'];
-        document.getElementById('starbucksCounter').innerHTML = data['starbucks'];
-        document.getElementById('philipmorrisCounter').innerHTML = data['philipmorris'];
-        document.getElementById('mcdonaldsCounter').innerHTML = data['mcdonalds'];
-        document.getElementById('nestleCounter').innerHTML = data['nestle'];
-        document.getElementById('pepsiCounter').innerHTML = data['pepsi'];
-        document.getElementById('unileverCounter').innerHTML = data['unilever'];
-        document.getElementById('pgCounter').innerHTML = data['proctergamble'];
-        document.getElementById('monsantoCounter').innerHTML = data['monsanto'];
-        document.getElementById('mondelezCounter').innerHTML = data['mondelez'];
-        document.getElementById('marsCounter').innerHTML = data['mars'];
-
+            // Установка значений "rating" для элементов на странице
+            for (var key in elementsMap) {
+                    console.log("elementsMap", elementsMap)
+                    var elementId = elementsMap[key];
+                    var rating = getRatingByTitle(data, key);
+                    if (rating !== null) {
+                            document.getElementById(elementId).innerHTML = rating;
+                    } else {
+                            console.log('Объект с указанным "title" не найден');
+                    }
+            }
     })
+    .catch(error => console.error('Ошибка при выполнении запроса:', error));
 
-    .catch();

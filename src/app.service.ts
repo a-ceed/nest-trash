@@ -25,9 +25,7 @@ export class AppService {
   }
 
   saveNumber(company: string): void {
-    console.log("saveNumber:", company)
     this.rating[company] += 1;
-    console.log("this.rating", this.rating)
     this.saveRatingToFile();
   }
 

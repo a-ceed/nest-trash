@@ -33,7 +33,7 @@ services:
 
   stat:
     container_name: internationaltrashaward.org
-    image: alextael/trashv15
+    image: alextael/trashv17
     expose:
       - "3000"
     environment:
@@ -42,5 +42,16 @@ services:
     volumes:
       - data:/var/docker/data/stat
 
+  mongodb:
+    image: mongo:7.0.5
+    container_name: my-mongo
+    restart: always
+    volumes:
+      - mongodb_data:/data/db
+      - '.private/mongo_data:/var/lib/mongodb'
+    ports:
+      - 27017:27017
+
 volumes:
   data:
+  mongodb_data:

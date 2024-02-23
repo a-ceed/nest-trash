@@ -18,4 +18,11 @@ export class AppController {
   getStoredNumber(): Rating {
     return this.numberService.getStoredNumber();
   }
+
+  @Post()
+  createCat(@Body() requestBody: { company: string }): object {
+    const { company } = requestBody;
+    this.numberService.saveNumber(company);
+    return { success: 'Ok'};
+  }
 }

@@ -13,7 +13,7 @@ import {
 import { CreateVoteDto } from './dto/create-vote.dto';
 import { UpdateVoteDto } from './dto/update-vote.dto';
 import { VotesService } from './votes.service';
-import { Vote } from './schemas/Vote.schema';
+import { Vote } from './schemas/vote.schema';
 
 // express
 // app.use((req, res, next) => {

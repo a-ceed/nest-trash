@@ -33,7 +33,9 @@ services:
 
   stat:
     container_name: internationaltrashaward.org
-    image: alextael/trashv17
+    build:
+      context: .
+      dockerfile: Dockerfile
     expose:
       - "3000"
     environment:

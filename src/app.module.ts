@@ -15,7 +15,7 @@ import {VotesModule} from "./vote/votes.module";
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'frontend'),
     }),
-    MongooseModule.forRoot('mongodb://localhost/trash'),
+    MongooseModule.forRoot('mongodb://mongodb/trash'),
   ],
   controllers: [AppController],
   providers: [AppService],

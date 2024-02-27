@@ -33,18 +33,18 @@ export class AppService {
     return this.rating;
   }
 
-  private loadRatingFromFile(): Rating {
-    try {
-      const data = fs.readFileSync('data.json', 'utf-8');
-      return JSON.parse(data);
-    } catch (error) {
-      console.error('Ошибка при чтении файла:', error);
-      return this.rating;
-    }
+  private loadRatingFromFile(): any {
+    // try {
+    //   const data = fs.readFileSync('data.json', 'utf-8');
+    //   return JSON.parse(data);
+    // } catch (error) {
+    //   console.error('Ошибка при чтении файла:', error);
+    //   return this.rating;
+    // }
   }
 
   private saveRatingToFile(): void {
-    const data = JSON.stringify(this.rating);
-    fs.writeFileSync('data.json', data);
-  }
+  //   const data = JSON.stringify(this.rating);
+  //   fs.writeFileSync('data.json', data);
+   }
 }

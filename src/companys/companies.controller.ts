@@ -13,7 +13,7 @@ import {
 import { CreateCompanyDto } from './dto/create-company.dto';
 import { UpdateCompanyDto } from './dto/update-company.dto';
 import { CompaniesService } from './companies.service';
-import { Company } from './schemas/Company.schema';
+import { Company } from './schemas/company.schema';
 
 // express
 // app.use((req, res, next) => {

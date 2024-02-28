@@ -1,0 +1,77 @@
+version: '3.7'
+
+services:
+  mongodb:
+    image: mongo:7.0.5
+    container_name: mongodb
+    restart: always
+    volumes:
+      - mongodb_data:/data/db
+      - '.private/mongo_data:/var/lib/mongodb'
+    ports:
+      - "27017:27017"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      mynetwork:
+        ipv4_address: 172.20.0.2
+
+  nginx:
+    container_name: nginx
+    image: nginxproxy/nginx-proxy
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - /var/docker/nginx/html:/usr/share/nginx/html
+      - /var/docker/nginx/certs:/etc/nginx/certs
+      - /var/docker/nginx/vhost:/etc/nginx/vhost.d
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - mynetwork
+
+  letsencrypt-companion:
+    container_name: letsencrypt-companion
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    restart: unless-stopped
+    volumes_from:
+      - nginx
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/docker/nginx/acme:/etc/acme.sh
+    environment:
+      DEFAULT_EMAIL: forjetx@gmail.com
+    networks:
+      - mynetwork
+
+  stat:
+    container_name: internationaltrashaward.org
+    image: alextael/trashv19
+    ports:
+      - "3000:3000"
+    environment:
+      - VIRTUAL_HOST=internationaltrashaward.org
+      - LETSENCRYPT_HOST=internationaltrashaward.org
+    depends_on:
+      - mongodb
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
+
+volumes:
+  mongodb_data:

@@ -53,7 +53,7 @@ services:
 
   stat:
     container_name: internationaltrashaward.org
-    image: alextael/trashv19
+    image: alextael/trashaward:latest
     ports:
       - "3000:3000"
     environment:

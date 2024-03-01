@@ -57,8 +57,9 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - VIRTUAL_HOST=internationaltrashaward.org
-      - LETSENCRYPT_HOST=internationaltrashaward.org www.internationaltrashaward.org
+      - VIRTUAL_HOST=internationaltrashaward.org, www.internationaltrashaward.org
+      - REDIRECT=internationaltrashaward.org
+      - LETSENCRYPT_HOST=internationaltrashaward.org, www.internationaltrashaward.org
     depends_on:
       - mongodb
     extra_hosts:

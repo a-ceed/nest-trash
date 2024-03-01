@@ -7,7 +7,7 @@ services:
     restart: always
     volumes:
       - mongodb_data:/data/db
-      - '.private/mongo_data:/var/lib/mongodb'
+      - .private/mongo_data:/var/lib/mongodb
     ports:
       - "27017:27017"
     extra_hosts:

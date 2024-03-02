@@ -6,8 +6,8 @@ services:
     container_name: mongodb
     restart: always
     volumes:
-      - mongodb_data:/data/db
-      - .private/mongo_data:/var/lib/mongodb
+      - dbdata:/data/db:/data/db
+      - ./private/mongo_data:/var/lib/mongodb
     ports:
       - "27017:27017"
     extra_hosts:

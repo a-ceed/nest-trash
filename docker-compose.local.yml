@@ -2,7 +2,12 @@ version: '3.6'
 
 services:
   mongodb:
-    image: mongo
+    image: mongo:7.0.5
+    container_name: mongodb
     restart: always
+    volumes:
+      - ./localdbdata:/data/db
     ports:
       - "27017:27017"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

@@ -6,7 +6,7 @@ services:
     container_name: mongodb
     restart: always
     volumes:
-      - dbdata:/data/db:/data/db
+      - ./dbdata:/data/db
       - ./private/mongo_data:/var/lib/mongodb
     ports:
       - "27017:27017"

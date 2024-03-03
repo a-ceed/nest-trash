@@ -8,8 +8,9 @@ services:
     volumes:
       - ./dbdata:/data/db
       - ./private/mongo_data:/var/lib/mongodb
-    ports:
-      - "27017:27017"
+#    Для подключения снаружи
+#    ports:
+#      - "27017:27017"
     extra_hosts:
       - "host.docker.internal:host-gateway"
     networks:

@@ -4,7 +4,7 @@ services:
   mongodb:
     image: mongo:7.0.5
     container_name: mongodb
-    restart: always
+    restart: unless-stopped
     volumes:
       - ./dbdata:/data/db
       - ./private/mongo_data:/var/lib/mongodb
@@ -55,6 +55,7 @@ services:
   stat:
     container_name: internationaltrashaward.org
     image: alextael/trashaward:latest
+    restart: unless-stopped
     ports:
       - "3000:3000"
     environment:

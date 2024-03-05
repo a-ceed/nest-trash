@@ -28,8 +28,11 @@
 
 
 function stat(){
+    //const formData = new FormData(document.querySelector('#form'));
+    //console.log("formData", formData)
     const data = {
         "title": CONSTNAME,
+       // "formData": formData
     };
 
     fetch("api/votes", {

@@ -15,7 +15,7 @@ class Vote {
     <div id="ms-blog-post" class="row">
         <div class="col-md-8">       
         <!-- Form -->
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSeNGrZ0prkxw24jesu9K3l-BDmsNYro-zjOc5pA4uCDu5jFMQ/formResponse"
+        <form id="form" action="https://docs.google.com/forms/d/e/1FAIpQLSeNGrZ0prkxw24jesu9K3l-BDmsNYro-zjOc5pA4uCDu5jFMQ/formResponse"
         method="post" target="hidden_iframe" onsubmit="submitted=true;">
         <div class="row">
         <div id="info"></div>
@@ -55,6 +55,7 @@ class Vote {
 <iframe name="hidden_iframe" id="hidden_iframe"
 style="display:none;" onload="if(submitted)
 {window.location='thanks.html';}"></iframe>
+
 <form action="https://docs.google.com/forms/d/e/1FAIpQLSeNGrZ0prkxw24jesu9K3l-BDmsNYro-zjOc5pA4uCDu5jFMQ/formResponse" method="post"
 target="hidden_iframe" onsubmit="submitted=true;">
         </div>

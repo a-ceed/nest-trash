@@ -27,7 +27,6 @@ services:
     container_name: letsencrypt-companion
     image: jrcs/letsencrypt-nginx-proxy-companion
     restart: unless-stopped
-    delay: 20s
     volumes_from:
       - nginx
     volumes:
@@ -43,8 +42,7 @@ services:
     container_name: mongodb
     depends_on:
       - nginx
-    restart: unless-stopped
-    delay: 50s
+    restart: always
     volumes:
       - ./dbdata:/data/db
       - ./private/mongo_data:/var/lib/mongodb
@@ -61,7 +59,6 @@ services:
     container_name: internationaltrashaward.org
     image: alextael/trashaward:latest
     restart: unless-stopped
-    delay: 70s
     ports:
       - "3000:3000"
     environment:

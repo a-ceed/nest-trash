@@ -1,23 +1,6 @@
 version: '3.7'
 
 services:
-  mongodb:
-    image: mongo:7.0.5
-    container_name: mongodb
-    depends_on:
-      - nginx
-    restart: unless-stopped
-    volumes:
-      - ./dbdata:/data/db
-      - ./private/mongo_data:/var/lib/mongodb
-#    Для подключения снаружи
-#    ports:
-#      - "27017:27017"
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    networks:
-      mynetwork:
-        ipv4_address: 172.20.0.2
 
   nginx:
     container_name: nginx
@@ -53,6 +36,24 @@ services:
       DEFAULT_EMAIL: forjetx@gmail.com
     networks:
       - mynetwork
+
+  mongodb:
+    image: mongo:7.0.5
+    container_name: mongodb
+    depends_on:
+      - nginx
+    restart: unless-stopped
+    volumes:
+      - ./dbdata:/data/db
+      - ./private/mongo_data:/var/lib/mongodb
+    #    Для подключения снаружи
+    #    ports:
+    #      - "27017:27017"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      mynetwork:
+        ipv4_address: 172.20.0.2
 
   stat:
     container_name: internationaltrashaward.org

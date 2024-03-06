@@ -58,8 +58,6 @@ services:
     container_name: internationaltrashaward.org
     image: alextael/trashaward:latest
     restart: unless-stopped
-    ports:
-      - "3000:3000"
     environment:
       - VIRTUAL_HOST=internationaltrashaward.org, www.internationaltrashaward.org
       - REDIRECT=internationaltrashaward.org

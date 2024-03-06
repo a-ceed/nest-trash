@@ -4,6 +4,8 @@ services:
   mongodb:
     image: mongo:7.0.5
     container_name: mongodb
+    depends_on:
+      - nginx
     restart: unless-stopped
     volumes:
       - ./dbdata:/data/db

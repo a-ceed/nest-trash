@@ -11,7 +11,7 @@ class Header {
 
             htmlCatalog += `
                 
-                        <nav class="ms-nav">
+          <nav class="ms-nav">
           <div class="ms-logo">
             <a href="index.html" data-type="page-transition">
               <div class="logo-dark"><img src="logo-dark.svg" alt="logo image"></div>
@@ -23,7 +23,7 @@ class Header {
 
           <button class="hamburger" type="button" data-toggle="navigation">
 
- <span class="hamburger-box">
+            <span class="hamburger-box">
 
           </span>
 

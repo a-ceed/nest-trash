@@ -9,7 +9,7 @@ RUN npm install --production
 # Скопируйте исходный код приложения в контейнер
 COPY . .
 # Скопируйте папку frontend в контейнер
-COPY vue-trash/dist /app/frontend
+COPY frontend /app/frontend
 # Откройте порт, который будет слушать ваше приложение
 EXPOSE 3000
 # Запустите команду для запуска вашего приложения

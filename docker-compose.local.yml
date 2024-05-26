@@ -8,6 +8,4 @@ services:
     volumes:
       - ./localdbdata:/data/db
     ports:
-      - "27017:27017"
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - "127.0.0.1:27017:27017"

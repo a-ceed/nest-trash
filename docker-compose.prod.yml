@@ -56,7 +56,7 @@ services:
 
   stat:
     container_name: internationaltrashaward.org
-    image: alextael/trashaward:latest
+    image: ghcr.io/a-ceed/nest-trash:latest
     restart: unless-stopped
     environment:
       - VIRTUAL_HOST=internationaltrashaward.org, www.internationaltrashaward.org

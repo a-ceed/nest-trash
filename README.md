@@ -50,6 +50,7 @@ $ npm run test:cov
   stat:
   container_name: internationaltrashaward.org
   image: ghcr.io/a-ceed/nest-trash:latest
+- закачать новый образ на сервак: docker pull ghcr.io/a-ceed/nest-trash:latest
 - на сервере остановить контейнеры:
   docker-compose stop
 - запустить docker-compose -f docker-compose.prod.yml up
@@ -61,3 +62,6 @@ docker rmi $(docker images -q)
 Логин в гитхаб реджестри
 login ghcr.io -u a-ceed -p тутТокенсгита
 то что в конце это токен аксесс из гитхаба
+
+БАЗА
+Чтобы рпедактировать базу нужно скачать папку dbdata с сервера, положить её содержимое в localdbdata запустить docker-compose.local и редактировать подключившись компасом

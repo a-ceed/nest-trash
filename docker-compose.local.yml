@@ -4,7 +4,6 @@ services:
   mongodb:
     image: mongo:7.0.5
     container_name: mongodb
-    restart: always
     volumes:
       - ./localdbdata:/data/db
     ports:

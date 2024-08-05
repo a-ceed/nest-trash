@@ -34,7 +34,8 @@ $ npm run test:cov
 ## Разработка
 Для разработки:
 - зайти в бекенд проект в app.module.ts и поменять настройки на локальную базу раскоментировав кусок кода
-- запустить докер, если не запущена база, то запустить через docker-compose.locale
+- запустить докер, если не запущена база, то запустить через docker-compose.locale: docker-compose -f docker-compose.local.yml up
+
 - запустить бекенд: star:dev
 - на фронте во всех вызовах поменять пути(раскоментировать, пример: http://localhost:3000/api/votes)
 
@@ -46,6 +47,7 @@ $ npm run test:cov
 - удалить dist бека, перебилдить бек
 - запустить сборку докер-образа: docker build -t ghcr.io/a-ceed/nest-trash:latest .
 - залить в хаб: docker push ghcr.io/a-ceed/nest-trash:latest
+- зайти на удаленный сервер
 - на серваке должен быть прописан файл с гит хранилища образов:
   stat:
   container_name: internationaltrashaward.org

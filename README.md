@@ -68,6 +68,12 @@ $ npm run test:cov
   docker-compose stop
 - запустить docker-compose -f docker-compose.prod.yml up
 
+## Mongo edit
+Создать ssh тунель с локальной машины на сервер
+ssh -L 27017:localhost:27017 user@твой-сервер-ip
+И в Compass c локальной машины указываешь строку подключения:
+mongodb://localhost:27017
+
 Еще есть команды для удаления контейнеров и образов, если ошибка: no space left on device  Но лучше их не юзать:
 docker rm $(docker ps -a -q)
 docker rmi $(docker images -q)

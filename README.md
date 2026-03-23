@@ -83,3 +83,16 @@ docker rmi $(docker images -q)
 login ghcr.io -u a-ceed -p тутТокенсгита
 то что в конце это токен аксесс из гитхаба
 
+
+## Как пользоваться субмодульным репозиторием при обновлении в нем контента
+Когда контент обновится (кто-то смержил PR в companies-content), обновляешь так:
+git submodule update --remote public/companies
+git add public/companies
+git commit -m "update companies content"
+git push
+
+При клонировании проекта на новой машине нужно:
+git clone --recurse-submodules https://github.com/org/vue-trash
+# или если уже склонировал:
+git submodule update --init
+
